@@ -1,0 +1,130 @@
+﻿@model LibraryManagement.Models.User
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Digital Library</title>
+    <style>
+        /* General styling for the login page */
+        body {
+            background-color: #E8F5E9;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            border-bottom: 2px solid green;
+        }
+
+            header img {
+                width: 100px;
+            }
+
+            header h1 {
+                font-size: 2em;
+                color: #4CAF50;
+            }
+
+        .login-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 80vh;
+        }
+
+        .login-area {
+            padding: 20px;
+            width: 300px;
+            border: 2px solid #4CAF50;
+            border-radius: 10px;
+            background-color: #C8E6C9;
+        }
+
+            .login-area h2 {
+                text-align: center;
+                color: #4CAF50;
+                margin-bottom: 20px;
+            }
+
+            .login-area label {
+                display: block;
+                margin-top: 10px;
+                color: #4CAF50;
+            }
+
+            .login-area input[type="text"],
+            .login-area input[type="password"],
+            .login-area select {
+                width: 100%;
+                padding: 8px;
+                margin-top: 5px;
+                border: 1px solid #4CAF50;
+                border-radius: 5px;
+                background-color: #FFF;
+            }
+
+            .login-area input[type="radio"] {
+                margin-top: 10px;
+                margin-left: 10px;
+            }
+
+            .login-area button {
+                width: 100%;
+                padding: 10px;
+                background-color: #4CAF50;
+                color: #FFF;
+                border: none;
+                border-radius: 5px;
+                margin-top: 10px;
+            }
+
+                .login-area button:hover {
+                    background-color: #45A049;
+                }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="/Image/dlibrary500.png" alt="Library Logo" />
+        <h1>Digital Library</h1>
+    </header>
+
+    <div class="login-container">
+        <img src="~/Image/Bookes.jpeg" alt="Library Image" style="width: 200px;" />
+        <div class="login-area">
+            <h2>Login Area</h2>
+            <form asp-action="Index" asp-controller="Admin" method="post">
+                <div class="form-group">
+                    <label asp-for="Username"></label>
+                    <input asp-for="Username" class="form-control" />
+                    <span asp-validation-for="Username" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password"></label>
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Role"></label>
+                    <select asp-for="Role" class="form-control">
+                        <option value="">Select Role</option>
+                        <option value="Admin">Admin</option>
+                        <option value="Librarian">Librarian</option>
+                        <option value="Student">Student</option>
+                    </select>
+                    <span asp-validation-for="Role" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }
+</body>
+</html>

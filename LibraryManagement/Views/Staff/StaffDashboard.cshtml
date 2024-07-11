@@ -1,0 +1,103 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Side Navigation Bar</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .sidebar {
+            height: 100vh;
+            background-color: #343a40;
+            padding-top: 20px;
+        }
+
+            .sidebar .nav-link {
+                color: white;
+            }
+
+                .sidebar .nav-link:hover {
+                    background-color: #495057;
+                }
+
+        .content {
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1350px;
+            margin-left: -15px;
+        }
+
+        .iframe-container {
+            width: 100%;
+            height: 80vh;
+            border: none;
+        }
+
+            .container-nav{
+               width:auto;
+               margin-left:-15px;
+               margin-right: -59px;
+               background-color: #767c83 !important;
+            }
+    </style>
+</head>
+<body>
+<div class="container-nav">
+            <nav class="navbar navbar-dark ">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <a class="navbar-brand" href="#">Navbar</a>
+            </nav>
+</div>
+    <div class="container">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block sidebar">
+                <div class="position-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Admin/Admin" target="contentFrame">
+                                <i class="fas fa-home"></i>
+                                My Account
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Admin/AddPublication" target="contentFrame">
+                                <i class="fas fa-info-circle"></i>
+                                Add Student
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Admin/AddBook" target="contentFrame">
+                                <i class="fas fa-envelope"></i>
+                                Book Report
+                            </a>
+                        </li>                     
+                    </ul>
+                </div>
+            </nav>
+            <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+                <div class="content">
+                    <iframe class="iframe-container" name="contentFrame" src="/Admin/Admin"></iframe>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
